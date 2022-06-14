@@ -1,0 +1,68 @@
+\documentclass[8pt,twoside]{book}
+\usepackage{main}
+\usepackage{upgreek}
+\usepackage{wrapfig}
+\usepackage{parcolumns}
+\usepackage{multicol}
+\usepackage{listings} 
+\usepackage{hyperref}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathdots}
+\usepackage[svgnames,table,xcdraw]{xcolor}
+\usepackage{gettitlestring}
+\usepackage{subfiles}
+\usepackage{caption}
+\usepackage{yhmath}
+\usepackage{booktabs}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{tikz}
+\usepackage{graphics}
+\usepackage{ragged2e}
+\usepackage{blkarray}
+\usepackage{boldline,makecell}
+\usepackage{chngcntr}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\theoremstyle{plain}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{exm}{\textbf{Example}}
+\numberwithin{exm}{chapter}
+\usepackage{latexsym}
+\usepackage{array}
+
+\theoremstyle{remark}
+\newtheorem{remark}{\texttt{Remark}}[chapter]
+
+\theoremstyle{summary}
+\newtheorem*{smr}{\textbf{Summary}}
+
+\theoremstyle{overview}
+\newtheorem*{overview}{\textbf{Overview}}
+
+\newtheorem{problem}{}[chapter]
+
+\newenvironment{example}    % this is the environment name for the input
+  {\renewcommand{\qedsymbol}{$\blacksquare$}%
+   \pushQED{\qed}\begin{exm}}
+  {\popQED\end{exm}}
+
+\newenvironment{summary}    % this is the environment name for the input
+  {\renewcommand{\qedsymbol}{$\blacksquare$}%
+   \pushQED{\qed}\begin{smr}}
+  {\popQED\end{smr}}
+
+\UseRawInputEncoding
+
+\graphicspath{{figi/}}
+
+
+\begin{document}
+    \tableofcontents
+    \addcontentsline{toc}{section}{Contents}
+    \clearpage
+    \subfile{ch1/ch1}  
+    \subfile{ch2/ch2}
+    \subfile{ch3/ch3}
+\end{document}
