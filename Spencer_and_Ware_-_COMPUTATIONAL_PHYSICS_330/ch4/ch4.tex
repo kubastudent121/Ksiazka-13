@@ -1,10 +1,8 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-\vfill
-\begin{parcolumns}[colwidths={2=0.3\textwidth}]{2}
-\colchunk{
+
 \chapter{Calculus and a Bouncing Ball}
-\begin{flushleft}
+
 For the past couple of labs we've focused on ways to visualize the solutions to
 differential equations using phase$-$space plots and qualitative analysis. In this lab
 we'll begin to learn how to solve differential equations numerically. To do this, we
@@ -19,7 +17,7 @@ bouncing ball.
  Read and work through \textit{Introduction to Matlab}, Chapter 8. Type and execute
 all of the material written in this kind of font. Then complete the
 following exercises.
-\end{flushleft}
+
 \begin{enumerate}[label=\alph*]
 \item Use the simple mid$-$point rule to numerically do the integral
 \begin{equation}\label{4.1}
@@ -46,11 +44,10 @@ Explain why very small values of h make the approximate derivative
 be wrong, giving zero instead of a good approximation to f' .The
 section below on roundoff will be helpful.
 \end{enumerate}
-}
-\colchunk{}
-\end{parcolumns}
-\begin{flushright}
-\begin{minipage}[t]{10cm}
+
+
+
+
 \section{Roundoff}
 The effect illustrated in exercise 4.1(b) is called roundoff and it rears its ugly head
 every time you subtract two numbers on a computer. To understand roundoff, consider the following two 15-digit numbers: $a = 1.2345678912345$ and
@@ -83,11 +80,8 @@ x0 \equiv x(0), x1 \equiv x(\tau ),
 x2 \equiv x(2\tau ),
 $$
 etc. With this notation, we can write the equations in (\hyperref[4.2]{ Eq. 4.2}) using the
-\end{minipage}
-\end{flushright}
-\newpage
-\begin{parcolumns}[colwidths={2=0.3\textwidth}]{2}
-\colchunk{
+
+
 (inaccurate) forward difference approximation of the derivative that you learned
 about in the reading:
 \begin{equation}\label{4.3}
@@ -106,6 +100,15 @@ v_{x,n+1}=v_{x,n}~~~~v_{y,n+1}=v_{y,n}-g \tau
 This method of approximating solutions is called Euler's method. In general, it's
 not very good, especially over many time steps. However, it provides a foundation
 for learning other better methods.
+\marginpar{
+The name Euler does not
+rhyme with ''cooler''; it
+rhymes with ''boiler'' . You
+will impress your fellow students and your professors
+if you give this important
+name from the history of
+mathematics its proper pronunciation
+}
 \subsection*{\small{P4.2}}\label{P4.2}
  Make a program in Matlab to model the motion of a ball bouncing on the
 floor using Euler's method. In your script, define the initial position of the
@@ -163,19 +166,8 @@ vy=0.95*abs(vy)
 This damping will mask the growth of Euler's method for a suitably
 small $\tau$.
 \end{enumerate}
-}
-\colchunk{
-\begin{wraptable}{l}{4cm}
-	\begin{tabular}{m{4cm}}
-The name Euler does not
-rhyme with ''cooler''; it
-rhymes with ''boiler'' . You
-will impress your fellow students and your professors
-if you give this important
-name from the history of
-mathematics its proper pronunciation
-\end{tabular}
-\end{wraptable}
-}
-\end{parcolumns}
+
+
+
+
 \end{document}

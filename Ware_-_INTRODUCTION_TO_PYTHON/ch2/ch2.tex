@@ -1,11 +1,7 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-\setlength{\parindent}{1.5em}
-\chapter{\textbf{Lists, Loops, Logic, and 2D Arrays}}
-\section{\textbf{Lists}}
-\begin{parcolumns}[colwidths={2=0.3\textwidth}]{2}
-	\colchunk{
-	\begin{flushleft}
+\chapter{Lists, Loops, Logic, and 2D Arrays}
+\section{Lists}
 	You'll encounter lists quite a bit in Python. In fact we already used some in the
 previous chapter without telling you. Lists are ordered collections of values. To
 create a list, put the elements inside of square brackets like this:
@@ -25,6 +21,39 @@ create a list, put the elements inside of square brackets like this:
 	a = [[4,3,2],[1,2.5,9],[4.2,2.9,10.5],
 	[39.4,1.4],[2.7,98,42,16.2]]
 	\end{lstlisting}
+	\marginpar{
+	\begin{tabular}{  m{1.5cm} m{2cm} }
+	a[x] & Access element x
+	in list a\\
+	a[x:y:z] & Extract a slice of
+	list a\\
+	a.append(x) & Append x to list a\\
+	a.pop() & Remove the last element of list a.\\
+	len(a) & Find the number
+	of elements in a\\
+	a.insert(x,y) & Insert y at location
+	x in list a\\
+	a.sort() & Sort list a from
+	least to greatest.\\
+	filter(f,x) & Filter list x using
+	the criteria function f(see lambda
+	functions).\\
+	a.reverse() &  Reverse the order
+	of list a.\\
+	a.index(x) & Find the index
+	where element x
+	resides.\\
+	a + b & Join list a to list b
+	to form one list.\\
+	max(a) & ind the largest element of a\\
+	min(a) & Find the smallest
+	element of a\\
+	sum(a) & Returns the sum of
+the elements of a\\
+\end{tabular}
+{Table 2.1 A sampling of ''house$-$keeping'' functions for lists.
+}\label{Table 2.1}
+}
 	When looking at the numerical lists above, you might be tempted to think of
 lists as mathematical matrices.Don't. Lists are not really designed for mathematics. To convince yourself of this, add the statement
 	\begin{lstlisting}[language=Python,numbers=none,showstringspaces=false]
@@ -50,48 +79,10 @@ that aren't numbers! As another example, execute this code
 	why does \textcolor{violet}{len}(a) work, but a.\textcolor{violet}{len}() return an error? The organic nature of the
 	development of Python syntax results in some inconsistencies in syntax that just
 	need to be learned.
-\end{flushleft}
-	}
-\colchunk{
-	\begin{wraptable}{l}{5.5cm}
-		\caption{.1 A sampling of ''house$-$keeping'' functions for lists.
-}\label{Table 2.1}
-	\begin{tabular}{  m{1.5cm} m{2cm} }
-a[x] & Access element x
-in list a\\
-a[x:y:z] & Extract a slice of
-list a\\
-a.append(x) & Append x to list a\\
-a.pop() & Remove the last element of list a.\\
-len(a) & Find the number
-of elements in a\\
-a.insert(x,y) & Insert y at location
-x in list a\\
-a.sort() & Sort list a from
-least to greatest.\\
-filter(f,x) & Filter list x using
-the criteria function f(see lambda
-functions).\\
-a.reverse() &  Reverse the order
-of list a.\\
-a.index(x) & Find the index
-where element x
-resides.\\
-a + b & Join list a to list b
-to form one list.\\
-max(a) & ind the largest element of a\\
-min(a) & Find the smallest
-element of a\\
-sum(a) & Returns the sum of
-the elements of a\\
-\end{tabular}
-\end{wraptable}
-}
-\end{parcolumns}
-\begin{parcolumns}[colwidths={2=0.3\textwidth}]{2}
-	\colchunk{
-	\begin{flushleft}
-	\section{\textbf{The range Function}}
+
+
+
+	\section{The range Function}
 	Python's range function represents a sequence of integer values that behaves a
 	lot like a list. The syntax of this function is like this
 	\begin{lstlisting}[language=Python,numbers=none,showstringspaces=false]
@@ -115,17 +106,18 @@ the elements of a\\
 	values will be assigned to the missing ones
 	\begin{lstlisting}[language=Python,numbers=none,showstringspaces=false]
 	b = range(3,9) # starts at 3, ends at 8, steps of 1 (default)
-	c = range(10) # starts at 0 (default), ends at 9, steps of 1 (default)
+	c = range(10) # starts at 0 (default), ends at 9, 
+	steps of 1 (default)
 	\end{lstlisting}
-	\section{\textbf{For Loops and Shorthand Assignments}}
+	\section{For Loops and Shorthand Assignments}
 	The primary use for the \textcolor{violet}{range} function in writing \textcolor{violet}{for} loops. A \textcolor{violet}{for} loop iterates
 	over each element in a list or range. Here is a \textcolor{violet}{for} loop used to sum a list of values\\
-	\begin{lstlisting}[language=Python,numbers=none,showstringspaces=false]
+\begin{lstlisting}[language=Python,numbers=none,showstringspaces=false]
 	s = 0
 	for x in [3,42,1,9.9]:
 		s = s + x
 	print(s)
-	\end{lstlisting}
+\end{lstlisting}
 	This code iterates over the list [3,42,1,9.9], assigning the variable x each value
 	in the list, one by one, until it reaches the end of the list. Notice the required colon
 	at the end of the \textcolor{violet}{for} statement that marks the beginning of the loop, and also that
@@ -135,27 +127,18 @@ the elements of a\\
 	execute the code. Note that the \textcolor{violet}{print} function now executes on each iteration of
 	the loop instead of just displaying the final value of s.\\
 	\indent You can also iterate over the values from the \textcolor{violet}{range} function, like this
-	\begin{lstlisting}[language=Python,numbers=none,showstringspaces=false]
+\begin{lstlisting}[language=Python,numbers=none,showstringspaces=false]
 	for y in range(5,50,3):
 		print(y)
-	\end{lstlisting}
-	\end{flushleft}
-	}
-	\colchunk{
-	\begin{wraptable}{r}{4.5cm}
-	\begin{tabular}{  m{4cm}  }
- Usually you would just use
-a sum function, but we are
-learning about loops here.
+\end{lstlisting}
+	\marginpar{
+\begin{tabular}{  m{4cm}  }
+ 	Usually you would just use
+	a sum function, but we are
+	learning about loops here.
 \end{tabular}
-\end{wraptable}
-
-	}
-	\end{parcolumns}
-	\newpage
-	\begin{parcolumns}[colwidths={2=0.35\textwidth}]{2}
-	\colchunk{
-	\begin{flushleft}
+}
+	
 	The \textcolor{violet}{range} function only produces integers, so the most common use case is to
 use it with a for loop to index a separate array, like this
 	\begin{lstlisting}[language=Python,numbers=none,showstringspaces=false]
@@ -190,7 +173,7 @@ use it with a for loop to index a separate array, like this
 	Remember that the range function starts at the first argument (i.e. 1), and goes
 	up to, but not including the second argument, so our product will only go up to
 	n = 20.	
-	\section{\textbf{Logical Statements}}
+	\section{Logical Statements}
 	Often we only want to run a section of code only when some condition is satisfied.
 	This requires the use of logic. The simplest logic is the \textcolor{violet}{if}\ \textcolor{violet}{elif}\ \textcolor{violet}{else} statement,
 	which works like this:
@@ -201,29 +184,22 @@ use it with a for loop to index a separate array, like this
 		c = 1
 	else:
 	\end{lstlisting}
-	\end{flushleft}
-	}
-	\colchunk{
-	\begin{wraptable}{r}{4.5cm}
-		\caption{ A list of shorthand variable reassignment notation.
-}\label{Table 2.2}
+	
+	
+	\marginpar{		
 	\begin{tabular}{  m{1.5cm} m{2cm} }
-Operation & Shorthand\\
-a = a + 1 & a += 1\\
-a = a - 2 & a -= 2\\
-a = 5*a & a *= 5\\
-a = a/c & a /= c\\
-a = a \%{} & 10 a \%{}= 10\\
-a = a**3 & a **= 3\\
-a = a // & 12 a //= 12
+	Operation & Shorthand\\
+	a = a + 1 & a += 1\\
+	a = a - 2 & a -= 2\\
+	a = 5*a & a *= 5\\
+	a = a/c & a /= c\\
+	a = a \%{} & 10 a \%{}= 10\\
+	a = a**3 & a **= 3\\
+	a = a // & 12 a //= 12
 \end{tabular}
-\end{wraptable}
-	}
-	\end{parcolumns}
-	\newpage
-	\begin{parcolumns}[colwidths={2=0.3\textwidth}]{2}
-	\colchunk{
-	\begin{flushleft}
+{Table 2.2: A list of shorthand variable reassignment notation.
+}\label{Table 2.2}
+}
 	\begin{lstlisting}[language=Python,numbers=none,showstringspaces=false]
 	c = 0
 	if a >= 0 or b >= 0: # If condition 1 met
@@ -263,7 +239,28 @@ a = a // & 12 a //= 12
 	c = 0.3
 	print(abs(b - c) < 1e-10)
 	\end{lstlisting}
-	\section{\textbf{While Loops}}
+	\marginpar{
+		
+\begin{tabular}{  m{1.5cm} m{2cm} }
+	$==$ & Equal\\
+	$ >= $ & Greater than or
+	equal\\
+	$> $ & Greater than\\
+	$<$ &  Less than\\
+	$<=$ & Less than or equal\\
+	$!=$ & Not equal\\
+	$and$ &  True if both conditions joined by and
+	are true\\
+	$or$ &  True if either of the
+	conditions joined by
+	or are true\\
+	$not$ & True if the following
+	condition is false.
+\end{tabular}
+{Table 2.3:  Python's logic elements.
+}\label{Table 2.3}
+}
+	\section{While Loops}
 	A while loop iterates until a certain condition is met. This loop is a good choice
 	when you don't know beforehand exactly how many iterations of the loop will be
 	executed but rather what condition you want to be met before finishing. As an
@@ -276,34 +273,6 @@ a = a // & 12 a //= 12
 	term = 1 # Load the first term in the sum
 	s = term # Initialize the sum
 	\end{lstlisting}
-	\end{flushleft}
-	}
-	\colchunk{
-	\begin{wraptable}{l}{4.5cm}
-		\caption{ Python's logic elements.
-}\label{Table 2.3}
-	\begin{tabular}{  m{1.5cm} m{2cm} }
-$==$ & Equal\\
-$ >= $ & Greater than or
-equal\\
-$> $ & Greater than\\
-$<$ &  Less than\\
-$<=$ & Less than or equal\\
-$!=$ & Not equal\\
-$and$ &  True if both conditions joined by and
-are true\\
-$or$ &  True if either of the
-conditions joined by
-or are true\\
-$not$ & True if the following
-condition is false.
-\end{tabular}
-\end{wraptable}
-	}
-	\end{parcolumns}
-	\begin{parcolumns}[colwidths={2=0.3\textwidth}]{2}
-	\colchunk{
-		\begin{flushleft}
 		\begin{lstlisting}[language=Python,numbers=none,showstringspaces=false]
 	n = 1 # Set a counter
 	while term > 1e-10: # Loop while term is 
@@ -320,7 +289,7 @@ condition is false.
 	what value n starts at and when it is incremented (n+=1). Also notice that term
 	must be assigned prior to the start of the loop. If it isn't the loop's first logical test
 	will fail and the loop won't execute at all.
-	\subsection*{\textbf{The \textcolor{violet}{break} statement}}
+	\subsection*{The break statement}
 	Sometimes \textcolor{violet}{while} loops are awkward to use because you can get stuck in an infinite loop if your check condition is never true. The 		\textcolor{violet}{break} command is designed to help you here. When \textcolor{violet}{break} is executed in a loop the script jumps to just after
 	the end at the bottom of the loop. The \textcolor{violet}{break} command also works with \textcolor{violet}{for} loops.
 	Here is our sum loop rewritten with break
@@ -328,7 +297,7 @@ condition is false.
 		term = 1 # Load the first term in the sum
 		s = term # Initialize the sum
 		n = 1 # Set a counter
-		while term > 1e-10: # Loop while term is bigger than 1e-10
+		while term >1e-10:#Loop while term is bigger than 1e-10
 		n += 1 # Add 1 to n so that it will count: 2,3,4,5
 		term = 1./n**2 # Calculate the next term to add
 		s += term # Add 1/n^2 to the running total
@@ -336,7 +305,7 @@ condition is false.
 			print("This is taking too long. I'm outta here...")
 			break
 		\end{lstlisting}
-\subsection*{\textbf{The continue statement}}
+\subsection*{The continue statement}
 	Another statement that is used with loops is the \textcolor{violet}{continue} statement. When
 	\textcolor{violet}{continue} is used, the remainder of the code for the current iteration is skipped
 	and the next iteration of the loop begins. If you wanted to do the sum in \hyperref[2.1]{Eq. (2.1)}
@@ -348,28 +317,23 @@ condition is false.
 	while term > 1e-10: # Loop while term is bigger than 1e-10
 		n += 1 # Add 1 to n so that it will count: 2,3,4,5
 		if n % 3 != 0:
-			continue # Skip the rest of the code, start the next iteration
+			continue # Skip the rest of the code, start the 
+			next iteration
 		term = 1./n**2 # Calculate the next term to add
 		s += term # Add 1/n^2 to the running total
 	\end{lstlisting}
-		\end{flushleft}				
-	}
-	\colchunk{
-		\begin{flushleft}
+	
+	\marginpar{
 	If you are stuck in a loop,
 	you can force your program
 	to stop by pressing ctrl+c or
 	cmd+c	
-		\end{flushleft}
 	}
-\end{parcolumns}
-\newpage
-\begin{flushright}
-\begin{minipage}[t]{12cm}
+	
 	
 	Now, when the value of n is not a multiple of 3, the last two lines of code in the
 	loop will be skipped.\\
-\section{\textbf{2D NumPy Arrays}$-$\textbf{Matrices}}
+\section{2D NumPy Arrays $-$ Matrices}
 	We introduced 1D NumPy arrays in the last chapter. The syntax for two-dimensional
 	arrays (matrices) builds on this foundation. Small matrices can be built by giving
 	the array function an argument that is a list of lists, like this
@@ -392,9 +356,9 @@ condition is false.
 	the array a. If you wanted to slice out the following 2$×$2 sub$-$matrix:
 \begin{equation}\label{2.3}
 \begin{bmatrix}
-5 &6\\
-8 &9\\
-\end{bmatrix}
+		5 &6\\
+		8 &9\\
+	\end{bmatrix}
 \end{equation}
 	you could do it like this:
 \begin{lstlisting}[language=Python,numbers=none,showstringspaces=false]
@@ -406,25 +370,21 @@ condition is false.
 \end{lstlisting}
 	would extract all of the rows on columns 1 and 2:
 \begin{equation}\label{2.4}
-\begin{bmatrix}
-2&3\\
-5&6\\
-8&9\\
-\end{bmatrix}
+	\begin{bmatrix}
+		2&3\\
+		5&6\\
+		8&9\\
+	\end{bmatrix}
 \end{equation}
 	This kind of slicing can't be done with lists.
-\subsection*{\textbf{Creating Larger Matrices}}
+\subsection*{Creating Larger Matrices}
 	You can create larger arrays using several functions from NumPy. To create an
 	array full of zeros, you use this syntax:
 \begin{lstlisting}[language=Python,numbers=none,showstringspaces=false]
 A = np.zeros((100,200))
 \end{lstlisting}
-\end{minipage}
-\end{flushright}
-\newpage
-\begin{parcolumns}[colwidths={2=0.3\textwidth}]{2}
-	\colchunk{
-	\begin{flushleft}
+
+
 	This creates an array with 100 rows and 200 columns, completely full of zeros. The
 	argument that you provide to the zeros function, a set of numbers surrounded
 	by round parentheses, is a data type called a \textit{tuple}. Tuples behave a lot like lists,
@@ -446,7 +406,7 @@ You can also create an identity matrix like this
 	I = np.identity(100)
 \end{lstlisting}
 	Since identity matrices must be square, it only requires one number as an argument rather than a tuple.\\
-\subsection*{\textbf{Math with Matrices}}
+\subsection*{Math with Matrices}
 	Once a 2D array is defined, it behaves as a matrix and you can perform all the
 	standard linear algebra functions with SciPy's linear algebra module. The matrix
 	multiplication operator is the $\copyright$ symbol. Here are a few examples illustrating
@@ -467,16 +427,13 @@ You can also create an identity matrix like this
 \end{lstlisting}
 	The linalg name space within SciPy provides lots of matrix functions. Pretty
 	much anything you learned about in your linear algebra class is available there.
-\section{\textbf{Solving a Set of Linear Equations}}
+\section{Solving a Set of Linear Equations}
 	To illustrate the use of matrix computations, let's solve a set of linear equations.
 	Here is an example of a set of two linear equations, with two unknowns:
 \begin{equation}\label{2.5}
 3x + y = 9~~~~x +2y = 8
 \end{equation}
-	\end{flushleft}
-	}
-	\colchunk{
-	\begin{flushleft}
+	
 	 NumPy also has a linear algebra module. The SciPy
 	version can do all that the
 	NumPy version can, plus it
@@ -487,12 +444,7 @@ You can also create an identity matrix like this
 	recommend you always
 	use the SciPy linear algebra
 	package
-	\end{flushleft}
-	}
-	\end{parcolumns}
-	\newpage
-	\begin{flushright}
-	\begin{minipage}[t]{12cm}
+	
 	This problem can be represented in matrix form like this:
 	\begin{equation}\label{2.6}
 	\textbf{Ax~ = ~b}
@@ -532,7 +484,7 @@ You can also create an identity matrix like this
 	b = np.array([[9],[8]])
 	x = la.solve(a,b)
 \end{lstlisting}
-\section{\textbf{ NumPy Matrix}}
+\section{ NumPy Matrix}
 	NumPy provides another object called a matrix that has been widely used for
 	linear algebra to represent matrices. The matrix object is a subclass of the NumPy
 	array and provides a little cleaner syntax for manipulating matrices than the array
@@ -542,7 +494,5 @@ You can also create an identity matrix like this
 	the NumPy array object to make some linear algebra syntax cleaner. All of the
 	functionality of the matrix object is available with NumPy arrays with some small
 	syntax changes.
-	\end{minipage}
-	\end{flushright}
-	\clearpage
+	
 \end{document}

@@ -1,10 +1,7 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-\setlength{\parindent}{1.5em}
-\begin{flushleft}
-\begin{minipage}[t]{12cm}
-\chapter{\textbf{Functions}}
-\section{\textbf{User}$-$\textbf{defined functions}}
+\chapter{Functions}
+\section{User$-$defined functions}
 Python's ecosystem is extremely rich, and you can usually find a pre-made library
 to do common manipulations. But you will also need to write your own functions.
 User$-$defined functions are created like this
@@ -48,11 +45,7 @@ the results
 x = myFunction(r,t)
 print(c)
 \end{lstlisting}
-\end{minipage}
-\end{flushleft}
-\newpage
-\begin{flushright}
-\begin{minipage}[t]{12cm}
+
 The print statement just causes an error since Python does not remember that
 inside the function $c=a+b$.\\
 \indent In contrast, the variables r,t, and result are called \textit{global variables}, which
@@ -77,7 +70,7 @@ and the function myFunction knows it's value and can use it in a calculation.
 Using global variables inside functions is usually considered bad practice and
 can confuse those reading the code. In general, every variable used in a function
 ought to be either passed in or defined inside of the function.
-\section{\textbf{ Importing User Defined Functions}}
+\section{ Importing User Defined Functions}
 If you write some functions that you find yourself using over and over again, or if
 you've written so many functions for a program that it makes your program hard
 to read, you can save your functions in a separate file and import them just like a
@@ -98,11 +91,7 @@ def maxHeight(v0,theta):
 Then you save the code above in a file called projectile.py. Now create another
 file in that same directory, and practice importing your projectlie functions using
 the following four methods (just use one method at a time):
-\end{minipage}
-\end{flushright}
-\newpage
-\begin{flushleft}
-\begin{minipage}[t]{12cm}
+
 \begin{lstlisting}[language=Python,numbers=none,showstringspaces=false]
 import numpy as np
 
@@ -132,7 +121,7 @@ program using Python on your computer. When you are ready to work on larger
 projects where these techniques are important, you can learn about modules and
 default search paths online. However, to keep things simple in this course, just
 keep your files together in the same folder.
-\section{\textbf{Writing Readable Code}}
+\section{Writing Readable Code}
 \subsection*{Comments}
 You should have all had several programming courses before this one, so I'll spare
 you the lecture about commenting your code. For your own sake, and for the sake
@@ -150,11 +139,7 @@ Python also has an environment like a comment that is called a docstring, delimi
 This is a docstring, which can be automatically 
 parsed to generate
 \end{lstlisting}
-\end{minipage}
-\end{flushleft}
-\newpage
-\begin{flushright}
-\begin{minipage}[t]{12cm}
+
 \begin{lstlisting}[language=Python,numbers=none,showstringspaces=false]
 documentation. It is not the same as a comment.
 """
@@ -171,8 +156,8 @@ continuing a logical line of code on the next physical line. The preferred metho
 is an implicit continuation which happens when you put a line break in your code
 before closing all parenthesis, like this:
 \begin{lstlisting}[language=Python,numbers=none,showstringspaces=false]
-x = (a + b
-+ c)
+	x = (a + b
+	+ c)
 \end{lstlisting}
 Normally you wouldn't wrap lines of code this short, but this is just an example.
 You should indent the continued line of code so that it starts right after the
@@ -180,27 +165,26 @@ unclosed opening parenthesis. You can almost always wrap lines of code this way
 simply by added parentheses. You can also use the backslash to continue a line of
 code, like this:
 \begin{lstlisting}[language=Python,numbers=none,showstringspaces=false]
-x = a + b \
-+ c
+	x = a + b \
+	+ c
 \end{lstlisting}
 \subsection*{Code cells}
 Spyder will allow you to split your code into individual cells that can be run
 separately, without executing the whole program like this
 \begin{lstlisting}[language=Python,numbers=none,showstringspaces=false]
-#%% This is the start of a cell
-x=5
-y=6
-print(x*y)
-#%% This is the start of another cell
-a=3
-b=4
-print(a/b)
+	#%% This is the start of a cell
+	x=5
+	y=6
+	print(x*y)
+	#%% This is the start of another cell
+	a=3
+	b=4
+	print(a/b)
 \end{lstlisting}
 If you place your cursor in one of the cells and press Ctrl+Enter (or push the
 button to the right of the green arrow), Spyder will execute just the code in the
 current cell. We generally discourage writing code using cells. The current state
 of you program then depends on which cells you've previously executed which
 can be painful to debug. However, there are times that they can be useful.
-\end{minipage}
-\end{flushright}
+
 \end{document}

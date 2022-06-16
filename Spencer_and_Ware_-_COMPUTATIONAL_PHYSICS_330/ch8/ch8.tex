@@ -1,8 +1,7 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 \chapter{Two Gravitating Bodies}
-\begin{parcolumns}[colwidths={2=0.3\linewidth}]{2}
-\colchunk{
+
 	Let's continue our study of differential equations by considering two masses
 	interacting through Newton's law of gravity\textsuperscript{1} The Newton's second$-$law equations
 	describing this situation are
@@ -23,20 +22,20 @@
 		x_2(t),~y_2(t),~z_2(t)~~~~\dot{x_2}(t),~\dot{y_2}(t),~\dot{z_2}(t)
 	\end{equation}
 		so you'll need to be careful when writing out the solution.
-	\subsection*{\small{P8.1}}\label{P8.1}
+	\subsection*{P8.1}\label{P8.1}
 	\begin{enumerate}[label=\alph*]
 		\item Use \hyperref[8.1]{Eq. 8.1} and \hyperref[8.2]{Eq. 8.2} , plus $\dot{x_1} = v_{x1}$, etc., to obtain the 12 first order
 			differential equations for this system. Write them down on paper in
 			terms of the individual components of the motion listed in\hyperref[8.3]{Eq. 8.3} .
 		\item  Now use your information from (a) to code up a right$-$hand$-$side function for this system. Have Matlab solve this system of equations 	using $G = 1$, $m1 = 1$, $m2 = 2$ and initial conditions\\
-		\begin{flushleft}
+		
 		$x_1(0) = 1, ~~x_2(0) = −1$\\
 		$y_1(0) = 0.5, ~~y_2(0) = −0.3$\\
 		$z_1(0) = −0.3, ~~z_2(0) = 0.6$\\
 		$v_{x1}(0) = 0.65,~~ v_{x2}(0) = −0.45$\\
 		$v_{y1}(0) = 0.2, ~~v_{y2}(0) = 0.3$\\
 		$v_{z1}(0) = 0.1, ~~v_{z2}(0) = −0.3.$\\
-		\end{flushleft}
+		
 		Run the solution from $t = 0$ to $t = 50$, and then plot the two trajectories
 		overlaid on the same plot using plot3.
 		A plot like \hyperref[Figure 8.1]{Fig. 8.1} gives us some sense of how these two objects interact, but
@@ -51,22 +50,20 @@
 		A better approach is to get the uneven data back from the solver and then use
 		\textit{interpolation} to resample it out over a much finer grid.
 	\end{enumerate}
+
+	
+\marginpar{
+\includegraphics[scale = 0.6]{ch8zd}
+\captionof{figure}[] { Two masses interacting
+via the inverse$-$square law.
+}\label {Figure 8.1}
 }
-\colchunk{
-	\begin{wrapfigure}{r}{9cm}
-\captionsetup{singlelinecheck=off, margin={0cm, 4cm}, justification=raggedright, format=hang}
-\caption{ Two masses interacting
-via the inverse$-$square law.}
-\label {Figure 8.1}
-\includegraphics[width=4cm]{ch8zd}
-\end{wrapfigure}
-}
-\end{parcolumns}
+
 \footnotetext{\textsuperscript{1}R. Baierlein, Newtonian Dynamics (McGraw Hill, New York, 1983), Chap. 5, and G. Fowles and
 G. Cassiday, Analytical Mechanics (Saunders, Fort Worth, 1999), Chap. 6. }
-\begin{parcolumns}[colwidths={2=0.3\linewidth}]{2}
+
 \section{Interpolation and Extrapolation}
-\colchunk{
+
 	\subsection*{\small{P8.2}}\label{P8.2}
 	 Read and work through \textit{Introduction to Matlab}, Chapter 10. Type and
 	execute all of the material written in this kind of font. Then write a
@@ -102,11 +99,8 @@ the evenly spaced time array like this:
 	Now animate the motion of the two masses by using the plot3 command.
 	A nice way to do this animation is to use the arrays that are equally spaced
 	in time, so that you can see the masses speed up as they approach each
-	}
-\end{parcolumns}	
-\newpage
-\begin{parcolumns}[colwidths={2=0.3\linewidth}]{2}
-\colchunk{
+	
+
 	other, and to plot the orbits in segments of 5, or so, data points. Using just
 	one point makes the orbits appear as sequences of dots, and using more
 	points makes the plots be ''jerky.'' A loop that will do this kind of animation
@@ -123,10 +117,8 @@ the evenly spaced time array like this:
 \end{lstlisting}
 	As your script runs you should see your masses doing an intricate gravitational dance, and the final picture should look just like the one in \hyperref[Figure 8.1]{Fig. 8.1}
 	(after the appropriate rotation of your figure).
-	}
-	\end{parcolumns}
-	\begin{parcolumns}[colwidths={2=0.3\linewidth}]{2}
-\colchunk{
+	
+	
 \section{Linear Algebra}
 	\subsection*{\small{P8.4}}\label{P8.4}
 	 Read and execute the examples in \textit{Introduction to Matlab}, Chapter 11. Then
@@ -209,15 +201,12 @@ the evenly spaced time array like this:
 	of Mercury'' ) which has been measured for centuries. When Einstein's
 	equations correctly predicted this precession it was a major triumph for his
 	theory of general relativity.
-	}
-	\end{parcolumns}
+	
 
-	\begin{wrapfigure}{r}{9cm}
-\caption{  Precession of the orbit,
-non-inverse$-$square..}
-\label {Figure 8.2}
-\raggedleft
-\includegraphics[width=4cm]{ch8zd1}
-\end{wrapfigure}
-\clearpage
+
+\marginpar{
+\includegraphics[scale = 0.6]{ch8zd1}
+\captionof{figure}[] {Precession of the orbit,
+non-inverse$-$square.}\label {Figure 8.2}
+}
 \end{document}

@@ -1,8 +1,7 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 \chapter{The Pendulum with a High Frequency Driving Force}
-\begin{flushleft}
-\begin{minipage}[t]{12cm}
+
 	Consider\textsuperscript{1} an un$-$driven equation of motion of the form
 \begin{equation}\label{11.1}
 	\ddot{x}=-\dfrac{\partial V}{\partial x}.
@@ -49,14 +48,10 @@ We make this guess precise by writing
 \end{equation}
 	with X approximately constant because it varies so slowly. A simple integration
 	yields the rapidly varying position and velocity
-\end{minipage}
-\end{flushleft}
+
 \footnotetext{\textsuperscript{1}This analysis is borrowed from Mechanics by Landau and Lifshitz: L. D. Landau and E. M.
 Lifshitz Mechanics (Pergamon Press, New York, 1976), p. 93$-$95.
 }
-\newpage
-\begin{flushright}
-\begin{minipage}[t]{12cm}
 \begin{equation}\label{11.7}
 	\upxi (t)=-\dfrac{A(X)}{\omega^{2}}sin\omega t~~;~~\ddot{\upxi}(t)=-\dfrac{A(X)}{\omega}cos\omega t
 \end{equation}
@@ -113,12 +108,13 @@ $$
 \begin{equation}\label{11.14}
 	\ddot{\Uptheta}=-{\omega _0}^{2}sin\Uptheta-\dfrac{b^{2} \omega ^{2}}{2L^{2}}sin\Uptheta cos\Uptheta
 \end{equation}
-\end{minipage}
-\end{flushright}
-\newpage 
-\begin{parcolumns}[colwidths={2=0.3\linewidth}]{2}
-\colchunk{
-\subsection*{\small{P11.1}}\label{P11.1}
+
+\marginpar{
+\includegraphics[width=\marginparwidth]{gghd}
+\captionof{figure}[] {}\label {Figure 11.1}
+} 
+
+\subsection*{P11.1}\label{P11.1}
 \begin{enumerate}[label=\alph*]
 	\item  Use Matlab's ode45 to solve for the motion of a rapidly driven pendulum by solving both Eq. (\hyperref[11.12]{11.12}) and Eq. (\hyperref[11.14]{11.14}) with $\omega _0 = 1, ~L = 1,
 	b = .02, and \omega = 30$ with initial conditions $\theta (0) = 1, ~\dot{\theta}(0) = 0$ and run
@@ -152,27 +148,5 @@ $$
 	These low frequency effective forces that arise from high$-$frequency non$-$linear
 	effects are called \textit{ponderomotive forces} and they show up all the time in physical
 	problems. This problem is just a small taste of a very large field.
-}
-\colchunk{
-\\
-\\
-\\
-\\
-\\
-\\
-\\
-\\
-\\
-\\
-\\
-\\
-\\
-\begin{wrapfigure}{r}{9cm}
-\captionsetup{singlelinecheck=off, margin={0cm, 2cm}, justification=raggedright, format=hang}
-\caption{}
-\label {Figure 11.1}
-\includegraphics[width=4cm]{gghd}
-\end{wrapfigure} 
-}
-\end{parcolumns}
+
 \end{document}

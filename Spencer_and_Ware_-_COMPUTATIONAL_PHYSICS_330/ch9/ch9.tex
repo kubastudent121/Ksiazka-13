@@ -1,8 +1,6 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-\newpage
-\begin{parcolumns}[colwidths={2=0.30\linewidth}]{2}
-\colchunk{
+
 \chapter{Fourier Transforms}
 	\section{Fourier Transforms}
 Suppose that you went to a Junior High band concert with a digital recorder and
@@ -28,10 +26,10 @@ P(\omega ) = {|g(\omega )|}^{2}
 $P(\omega )$ gives the signal intensity as a function of frequency without any phase
 information. In this lab, we will learn how to make these types of plots.
 \section{FFTs and Fourier Transforms}
-\subsection*{\small{P9.1}}\label{P9.1}
+\subsection*{P9.1}\label{P9.1}
  Read and work through \textit{Introduction to Matlab} Chapter 13. Type and
 execute all of the material written in this kind of font.
-\subsection*{\small{P9.2}}\label{P9.2}
+\subsection*{P9.2}\label{P9.2}
  On the class web site is a file called ''Beethoven.wav'' that has the first four
 notes of Beethoven's 5th symphony. Save it to your computer and listen to
 it. Load the sound waveform into the matrix f using\\
@@ -43,22 +41,15 @@ was sampled at 44100 points/second. Plot the signal versus time and plot
 its power spectrum versus $\nu$ (not $\omega$) over the range 0$-$1000 Hz with both a
 linear scale and with semilogy. (You should get in the habit of looking at
 
-}
-\colchunk{
-\begin{wrapfigure}{r}{9cm}
-	\captionsetup{singlelinecheck=off, margin={1cm, 4cm}, justification=raggedright, format=hang}
-	\caption{The power spectrum of
+\marginpar{
+\includegraphics[width=\marginparwidth]{ch999}
+\captionof{figure}[] {The power spectrum of
 the first four notes of Beethoven's
-5th symphony.}
-	\label {Figure 9.1}
-	\includegraphics[scale=0.8]{ch999}
-\end{wrapfigure}
+5th symphony.}\label {Figure 9.1}
 }
-\end{parcolumns}
+
 \footnotetext{\textsuperscript{1}People often work with complex signals, in which case this separation is less clear.}
-\newpage
-\begin{parcolumns}[colwidths={2=0.3\linewidth}]{2}
-\colchunk{
+
 	spectra with a log scale to see structure that may not be evident on a linear
 scale.)\\
 Now we need to make sense of the spectrum. The short notes at the beginning of the music are the note ''G'' (repeated three times) played in octaves
@@ -74,6 +65,21 @@ into two pieces: one that contains the first three short notes, and a second
 that only contains the one last long note. Then repeat the analysis above
 and compare your two new spectra to the original one. Show the TA all
 three spectra and explain the origin of all of the peaks.
+\marginpar{
+\includegraphics[width=\marginparwidth]{ch992}
+\captionof{figure}[] {A string's fundamental mode of vibration has nodes
+at the ends and an antinode in
+the middle. However, the string
+can also vibrate in harmonic
+modes with nodes between the
+ends. When a musician drags
+her bow across a string, she
+excites mostly the fundamental, but the harmonics are also
+present. The frequencies of these
+modes are: $\nu _0$ = fundamental,
+$2\nu _0$ = second harmonic, $3\nu _0$ =
+third harmonic, etc.}\label {Figure 9.2}
+}
 \section{The Uncertainty Principle}
 The uncertainty principle connects the duration of a signal in time with the
 spread of its spectrum. It was made famous in quantum mechanics by Werner
@@ -88,7 +94,7 @@ which has a ''bump'' centered at $t_0$ with a width controlled by W . Because th
 signal oscillates at $\omega _0$ we would expect to see a peak in the spectrum at $\omega = \omega _0$.
 This frequency peak also has a well$-$defined width, and this width is related to the
 width of the signal in time through the uncertainty principle.
-\subsection*{\small{P9.3}}\label{P9.3}
+\subsection*{P9.3}\label{P9.3}
  Write a Matlab script to build f (t) from \hyperref[9.3]{Eq. 9.3}, with $t_0$ chosen so that
 the bump is in the center of your time window. Plot f (t) and its power
 spectrum for $\omega _0 = 200s^{−1}$
@@ -118,33 +124,12 @@ a tuba plays a low note around $\omega  = 200 s^{−1}$
 \begin{equation}
 	\Delta t \approx \dfrac{1\pi}{\Delta \omega} \approx \dfrac{1}{2} = 0.5s
 \end{equation}
-}
-\colchunk
-{
-\begin{wrapfigure}{l}{6cm}
-\captionsetup{singlelinecheck=off, margin={2cm, 0cm}, justification=raggedright, format=hang}
-\caption{ \small{A string's fundamental mode of vibration has nodes
-at the ends and an antinode in
-the middle. However, the string
-can also vibrate in harmonic
-modes with nodes between the
-ends. When a musician drags
-her bow across a string, she
-excites mostly the fundamental, but the harmonics are also
-present. The frequencies of these
-modes are: $\nu _0$ = fundamental,
-$2\nu _0$ = second harmonic, $3\nu _0$ =
-third harmonic, etc.}}
-\label {Figure 9.2}
-\includegraphics[width=4cm]{ch992}
-\end{wrapfigure} 
-}
-\end{parcolumns}
+
+
+
 \footnotetext{\textsuperscript{2}The weirdness of quantum comes not from the fact that waves obey the uncertainty principle,
 but from the idea that things like electrons behave like waves.}
-\newpage
-\begin{parcolumns}[colwidths={2=0.3\linewidth}]{2}
-\colchunk{
+
 Now tubas can play faster than this, but if you listen carefully, when they do
 their sound becomes '' '', which simply means that the note isn't a very pure
 frequency, corresponding to a wide frequency peak\textsuperscript{4} Your ear$/$brain system also
@@ -161,7 +146,7 @@ sound of your clap, which you can clearly hear as a higher$-$pitched burst of so
 \section{Windowing}
 Review the material on windowing in \textit{Introduction to Matlab}, then work through
 the following problem.
-\subsection*{\small{P9.4}}\label{P9.4}
+\subsection*{P9.4}\label{P9.4}
  Modify Listing 13.1 in \textit{Introduction to Matlab} so that it uses the following
 time signal
 \begin{lstlisting}[language=Matlab][numbers=none]
@@ -189,20 +174,15 @@ We've made the peaks so broad that they've smooshed into each other due
 to leakage. Find an alpha that is a good compromise between getting the
 right peak amplitude and maintaining good resolution. Explain the concepts of windowing and leakage, and tell how they relate to resolving the
 height and width of closely spaced peaks.
-\subsection*{\small{P9.5}}\label{P9.5}
+\subsection*{P9.5}\label{P9.5}
 Use Matlab to numerically verify the trig identity $cos^{4}(t)=3/8+(1/2)
 cos(2t)+(1/8)cos(4t)$ by plotting the Fourier transform of the function. You will need
 to choose an appropriate time series and window function to see the relationships accurately.
+\marginpar{
+\includegraphics[width=\marginparwidth]{ch93}
+\captionof{figure}[] {Enter your data here}\label {Table 9.1 }
 }
-\colchunk{
-\begin{wrapfigure}{r}{9cm}
-\captionsetup{singlelinecheck=off, margin={0cm, 4cm}, justification=raggedright, format=hang}
-\caption{Enter your data here}
-\label {Table 9.1 }
-\includegraphics[width=4cm]{ch93}
-\end{wrapfigure}
-}
-\end{parcolumns}
+
 \footnotetext{\textsuperscript{3}This is not a mathematically rigorous uncertainty relation, but it illustrates the idea.}
 \footnotetext{\textsuperscript{4}The length of the tuba also contributes to the ''muddyness'' of the sound, since it takes a while
 for sound to propagate back and forth between the mouthpiece and the bell and set up the standing
@@ -210,6 +190,6 @@ wave. This causes a messy ''attack'' transient at the beginning of each note, wh
 less of the sustained pitch to listen to.}
 \footnotetext{\textsuperscript{5}At tuba frequencies, your ear/brain system can perceive pitch for pulses containing only a few
 cycles.}
-\newpage 
+ 
 
 \end{document}

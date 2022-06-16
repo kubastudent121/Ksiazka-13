@@ -1,7 +1,7 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 \chapter{The Harmonic Oscillator and Resonance}
-\begin{minipage}[t]{10cm}
+
 The harmonic oscillator is probably the most studied system in dynamics. In
 this lab we use the numerical tools that we have developed to explore some of
 the behavior of this system\textsuperscript{1}. Before we dive into the computational details, let's
@@ -20,26 +20,25 @@ or equivalently
 \begin{equation}\label{6.3}
 x(t)=Asin(\omega_0t+\varphi) 
 \end{equation}
-\subsection*{\small{P6.1}}\label{P6.1}
+\subsection*{P6.1}\label{P6.1}
 \begin{enumerate}[label=\alph*]
 \item Sketch a phase space diagram for the harmonic oscillator by hand
 on paper. Draw at least two phase$-$space curves for initial conditions
 $x(0) = 1, ~v(0)~ = 0$ and another for $x(0) = 0~ and~ v(0) = 1$.
 \item Use Matlab to make a phase$-$space plot of x(t) and v(t) for a simple
 harmonic oscillator with $\omega _0 = 2.$
-\item  Solve \hyperref[6.1]{Eq. 6.1} numerically using Matlab's ODE solver with initial values $x_0 ~= ~1~ and~ v_0 ~=~ 0,~ v_0 ~=~ 1.4,~ and ~v_0~ =~ −1$ and run them from $t = 0 ~to~ ~t = 1$. Overlay the three trajectory plots on your flow plot. Identify
+\item  Solve \hyperref[6.1]{Eq. 6.1} numerically using Matlab's ODE solver with initial values $x_0 ~= ~1~ and~ v_0 ~=~ 0,
+~ v_0 ~=~ 1.4,~ and ~v_0~ =~ −1$ and run them from $t = 0 ~to~ ~t = 1$. Overlay the three trajectory plots on your flow plot. Identify
 each of the three initial conditions on your plot, and explain what the
 harmonic oscillator does along each trajectory.
 \end{enumerate}
 Of course, no real oscillator wiggles forever. To model a real system we need to
 add damping.
-\end{minipage}
+
 \footnotetext{\textsuperscript{1}You can read more about the simple harmonic oscillator in the following references: R. Baierlein,
 Newtonian Dynamics (McGraw Hill, New York, 1983), Chap. 2, and G. Fowles and G. Cassiday,
 Analytical Mechanics (Saunders, Fort Worth, 1999), Chap. 3. }
-\newpage
-\begin{flushright}
-\begin{minipage}[t]{10cm}
+
 \section{The Damped Oscillator}
 If we add some linear damping to the system, the harmonic oscillator equation
 becomes
@@ -85,11 +84,9 @@ argument of this square root is positive $(\gamma > \omega _ 0 )$, then both of 
 (no wiggles). The transition between the two is when the argument of the square
 roots is zero, i.e., when $\gamma = \omega _ 0$
 . This special case is called critical damping.
-\end{minipage}
-\end{flushright}
-\newpage
-\begin{minipage}[t]{10cm}
-\subsection*{\small{P6.2}}\label{P6.2}
+
+
+\subsection*{P6.2}\label{P6.2}
 \begin{enumerate}[label=\alph*]
 \item Use Matlab to make a phase$-$space plot for a damped harmonic oscillator with $\omega _ 0 = 2 ~and~ \gamma = 0.5.$
 \item Solve \hyperref[6.4]{Eq. 6.4} numerically using Matlab's ODE solver with initial values $x_0 = 1 ~and~ v_0 = 0, v_0 = 1.4,~ and~ v_0 = −1$, and run from $t = 0$ to
@@ -118,17 +115,16 @@ start$-$up with some beating between the two frequencies ($\omega$ and $\omega _
 oscillations at $\omega _d$ damp out and the system transitions to a state of oscillation at
 the driving frequency $\omega$ .
 It is possible to solve \hyperref[6.9]{Eq. 6.9} symbolically, but let's study its behavior numerically for practice.
-\subsection*{\small{P6.3}}\label{P6.3}
+\subsection*{P6.3}\label{P6.3}
 Use Matlab to numerically solve \hyperref[6.9]{Eq. 6.9} and plot x(t) from $t = 0$ to $t = 300$
 with $\omega _ 0 = 1$, $F_0 = 1$, $m = 1$, $\omega = 1.1$, and $\gamma  = 0.01$. Start from rest, with
 $x(0) = 0$ and $x˙(0) = 0$. Note the initial beating between frequencies and
 verify graphically that the final oscillation frequency of $x(t)$ is $\omega$.
-\end{minipage}
+
 \footnotetext{\textsuperscript{2}You can read more about the simple harmonic oscillator in the following references: R. Baierlein,
 Newtonian Dynamics (McGraw Hill, New York, 1983), Chap. 2, and G. Fowles and G. Cassiday,
 Analytical Mechanics (Saunders, Fort Worth, 1999), Chap. 3. }
-\newpage
-\begin{minipage}[t]{10cm}
+
 \section{Resonance Curves}
 When you push someone in a swing, you find that if you drive the system at the
 right frequency, you can get large amplitude oscillations. This phenomenon is an
@@ -136,7 +132,7 @@ example of resonance, and the frequency at which the system has the maximum
 response is called the resonance frequency $\omega _ r$
 . If you drive a system at a frequency
 far from $\omega _ r$ you only get small oscillations.
-\subsection*{\small{P6.4}}\label{P6.4}
+\subsection*{P6.4}\label{P6.4}
 \begin{enumerate}[label=\alph*]
 \item Make a new script by modifying your script from  so it makes a
 plot of x(t) starting from rest and running for a long time so all the
@@ -179,11 +175,9 @@ while the phase shift $\varphi$ is given by
 \begin{equation}\label{6.12}
 tan\varphi = \dfrac{2\gamma \omega }{{\omega _ 0} ^{2}-\omega ^{2}}
 \end{equation}
-\end{minipage}
 
-\newpage
-\begin{minipage}[t]{10cm}
-\subsection*{\small{P6.5}}\label{P6.5}
+
+\subsection*{P6.5}\label{P6.5}
 \begin{enumerate}[label=\alph*]
 \item  Write a matlab script that plots \hyperref[6.11]{Eq. 6.11} for the parameters in \hyperref[P6.4]{P6.4}
 and compare the plot with your numerical results. Also plot $\varphi (\omega )$ and
@@ -197,5 +191,5 @@ the damped frequency $\omega _ d$ , but occurs at
 \end{equation}
 \end{enumerate}
 HINT: Remember that to find the peak of a curve, you take its derivative and set it equal to zero.
-\end{minipage}
+
 \end{document}

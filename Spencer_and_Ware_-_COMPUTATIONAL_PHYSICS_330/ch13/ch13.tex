@@ -1,8 +1,7 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 \chapter{Coupled Nonlinear Oscillators}
-\begin{minipage}[t]{12cm}
-\setlength{\parindent}{1.5em}
+
 	When two or more oscillators are hooked together, we say that they are coupled\textsuperscript{1} Our final model for driving a swing was an example of coupled pendula.
 	In that case the rotation of the swinger was coupled to the rotation of the overall
 	swing, which allows you to drive the swing.\\
@@ -34,17 +33,13 @@ U_c=\dfrac{1}{2}\kappa _c(\theta _1 -\theta _2 )^{2}
 \begin{equation}\label{13.3}
 	U=\dfrac{1}{2}\kappa _1 {\theta _1}^{2}+\dfrac{1}{2}{\kappa _2}{\theta _2}^{2} +\dfrac{1}{2}\kappa _c (\theta _1 - \theta _2)^{2}
 \end{equation}
-\subsection*{\small{P13.1}}\label{P13.1}
+\subsection*{P13.1}\label{P13.1}
 	Combine this potential energy function with the kinetic energy
 \begin{equation}\label{13.4}
 	T=\dfrac{1}{2}I _1 \dot{\theta _1}^{2} + \dfrac{1}{2} I_2\dot{\theta _2}^{2}
 \end{equation}
 \footnotetext{\textsuperscript{1}G. Fowles and G. Cassiday, Analytical Mechanics (Saunders, Fort Worth, 1999), p. 443$-$460.}
-\end{minipage}
-\newpage
-\begin{parcolumns}[colwidths={2=0.25\linewidth}]{2}
-\colchunk
-{
+
 to build the Lagrangian $(L = T  − U)$. Use the Lagrangian equation of motion
 \begin{equation}\label{13.5}
 \dfrac{\partial L}{\partial q_i} - \dfrac{d}{dt}(\dfrac{\partial L}{\partial \dot{q_i}})=0
@@ -77,7 +72,13 @@ to build the Lagrangian $(L = T  − U)$. Use the Lagrangian equation of motion
 	$\omega _0$ is associated with the natural frequency of a single pendulum without any
 	coupling, and the parameter $\omega _c$ is associated with the natural frequency of the
 	middle section of tubing when attached to the two pendula.\\
-\subsection*{\small{P13.2}}\label{P13.2}
+\subsection*{P13.2}\label{P13.2}
+\marginpar{
+\includegraphics[width=\marginparwidth]{ch131313133}
+\captionof{figure}[] {Energy passes back
+and forth between $\theta _1$ and $\theta _2$ due
+to beating.}\label {13.1}
+}
 \begin{enumerate}[label=\alph*]
 \item  Use Mathematica to solve \hyperref[13.7]{Eq. 13.7}$-$(\hyperref[13.10]{13.10}) symbolically without
 	initial conditions to see if you can find the two separate frequencies
@@ -114,7 +115,7 @@ to build the Lagrangian $(L = T  − U)$. Use the Lagrangian equation of motion
 	oscillations in it for the FFT to work well. As a general rule, your time
 	plots should look solid if you want to use the FFT. A maximum time
 	around 2000 works fine.
-\item Now add a linear damping term to the equation of motion for pendulum number 2, start the system with these initial conditions: $\theta _1(0) =0.3,		\dot{\theta _1}=0,\dot{\theta _2}=0,\theta _2 = 0$ and study the motion of the two
+\item Now add a linear damping term to the equation of motion for pendulum number 2, start the system with these initial conditions: $\theta _1(0) =0.3,\dot{\theta _1}=0,\dot{\theta _2}=0,\theta _2 = 0$ and study the motion of the two
 oscillators. Use
 \begin{equation}\label{13.12}
 	\ddot{\theta _2} = \ \gamma \dot{\theta _2} + . . .
@@ -134,26 +135,20 @@ oscillators. Use
 	in pendulum number 2. Run the code long enough that the system
 	comes to a steady state in which both pendulums have constant amplitude. Discuss the flow of energy in this system.
 \end{enumerate}
-}
-\colchunk{
-\begin{wraptable}{l}{4cm}
-	\begin{tabular}{m{4cm}}
- This driving force is essentially the same as the intermittent torque you apply to
+
+\marginpar{
+This driving force is essentially the same as the intermittent torque you apply to
 someone when you push
 them in a swing.
-\end{tabular}
-\end{wraptable}
-
 }
-\end{parcolumns}
-\begin{parcolumns}[colwidths={2=0.25\linewidth}]{2}
-\colchunk{
+
+
 \section{Coupled Wall Clocks}
 	Now we are ready to study a very famous problem in dynamics. In the 1600s
 	Christian Huygens observed that when two clocks are hung next to each other
 	on a wall, they tend to synchronize with each other. Let's see if we can make our
 	equations of motion do this.
-\subsection*{\small{P13.3}}\label{P13.3}
+\subsection*{P13.3}\label{P13.3}
 \begin{enumerate}[label=\alph*]
 \item Begin by making both pendulums be damped and driven as described
 	in \hyperref[P13.2]{P13.2}(d) and (e), but remove the coupling by setting $\omega _cc = 0$. Run
@@ -188,7 +183,7 @@ them in a swing.
 	real clocks on a wall.
 \end{enumerate}
 \section{Solving Nonlinear Equations}
-	\subsection*{\small{P13.4}}\label{13.4}
+	\subsection*{P13.4}\label{13.4}
 		Read and execute the examples in \textit{Introduction to Matlab}, Chapter 14. Then
 		complete the following exercises.
 	\begin{enumerate}[label=\alph*]
@@ -203,17 +198,9 @@ them in a swing.
 			$$\dfrac{x}{x+y-z}=3$$
 			$$x\sqrt{z}=(10-y)^{2}$$
 	\end{enumerate}
-}
+
 \footnotetext{\textsuperscript{2}For more information about subplots, look it up via help subplot using online help in Matlab.}
-\colchunk{
-\begin{wrapfigure}{r}{7cm}
-	\captionsetup{singlelinecheck=off, margin={3.67cm, 0cm}, justification=raggedright, format=hang}
-	\caption{ Energy passes back
-and forth between $\theta _1$ and $\theta _2$ due
-to beating.}\label {13.1}
-	\includegraphics[scale=0.8]{ch131313133}
-\end{wrapfigure}
-}
-\end{parcolumns}
+
+
 
 \end{document}

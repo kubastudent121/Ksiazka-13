@@ -1,8 +1,8 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-\begin{parcolumns}[colwidths={2=0.3\linewidth}]{2}
+
 \chapter{Chaos}
-\colchunk{
+
 \section{The van der Pol Oscillator}
 Consider the following non-linear oscillator equation, called the van der Pol
 oscillator:\textsuperscript{1}
@@ -25,7 +25,7 @@ quiver, in \hyperref[Figure 12.1]{Figure 12.1} illustrates these two features. N
 from the origin and the general inward flow at the outer edges of the picture. The
 flow is not uniformly inward, however, and later in this lab you will see the effect
 of the squeezed inward flow patterns visible in the figure.
-\subsection*{\small{P12.1}}\label{P12.1}
+\subsection*{P12.1}\label{P12.1}
 \begin{enumerate}[label=\alph*]
 \item Use Matlab's ode45 to solve \hyperref[12.1]{Eq. 12.1} numerically for $\epsilon = 0.3, \omega _ 0 =
 1.3, and \ell = 1$. Use options=odeset('RelTol' ,1e$-$5) to set the
@@ -42,20 +42,17 @@ using an axis command to display the spectrum from $\omega  = 0 ~to~ \omega = 20
 and note where the major peaks are. Remember to interpolate x(t)
 onto an even time grid before computing the Fourier transform.
 \end{enumerate}
+
+
+
+\marginpar{
+\includegraphics[scale = 0.8]{ch12zdj12}
+\captionof{figure}[] {Flow in phase space
+for the Van der Pol oscillator with $\omega _0=1, \ell =1,~ and~ \epsilon = 1$}\label {Figure 12.1}
 }
-\colchunk{
-\begin{wrapfigure}{r}{8cm}
-	\captionsetup{singlelinecheck=off, margin={0cm, 4cm}, justification=raggedright, format=hang}
-	\caption{ Flow in phase space
-for the Van der Pol oscillator with $\omega _0=1, \ell =1,~ and~ \epsilon = 1$}
-	\label {Figure 12.1}
-	\includegraphics[scale=0.8]{ch12zdj12}
-\end{wrapfigure}  
-}
-\end{parcolumns}
+
 \footnotetext{\textsuperscript{1}R. Baierlein, Newtonian Dynamics (McGraw Hill, New York, 1983), p. 88$-$93.}
-\newpage
-\begin{minipage}[t]{10cm}
+
 \section{Limit Cycles and Attractors}
 The limit cycle you observed in this problem is a simple example of an attractor
 in phase space. An attractor is a curve in the phase$-$space of the differential
@@ -72,7 +69,7 @@ lorenz at the command prompt in Matlab). These kind of attractors are called
 strange attractors, and are examples of chaotic systems. We'll study chaos later in
 this lab and you will see other examples of attractors, but none of the attractors
 encountered in this lab are strange attractors (except the Lorenz attractor).
-\subsection*{\small{P12.2}}\label{P12.2}
+\subsection*{P12.2}\label{P12.2}
  Now let's add a driving force to the van der Pol oscillator, like this:
 \begin{equation}\label{12.2}
 \ddot{x}-\epsilon(\ell ^{2} -x^{2})\dot{x}+{\omega _0}^{2}x=Acos\omega t
@@ -97,10 +94,9 @@ stable limit cycle (thump$-$Thump, thump$-$Thump,...). Sometimes this stable lim
 cycle becomes irregular, in which case it is desirable to supply a periodic driving signal via a pacemaker which, if strong enough, can force the heart to become
 entrained with it, restoring a stable limit cycle, albeit at a frequency determined
 by the pacemaker rather than by the physical needs of the patient.
-\end{minipage}
-\newpage
-\begin{parcolumns}[colwidths={2=0.3\linewidth}]{2}
-\colchunk{
+
+
+
 \section{Dynamical Chaos}
 Now let's switch gears a bit and take a brief tour through one of the most exciting
 areas in the study of differential equations: dynamical chaos. A chaotic system is
@@ -129,7 +125,7 @@ computers we will use in this laboratory are more powerful than the computers
 we used to send men to the moon and to design nuclear weapons in the 1960s
 and 1970s, so we have all the computing power we need to at least be introduced
 to this fascinating field.
-\subsection*{\small{P12.3}}\label{P12.3}
+\subsection*{P12.3}\label{P12.3}
  A simple system in which chaos can be observed is a particle moving in a
 potential well with two low spots:
 \begin{equation}\label{12.4}
@@ -164,12 +160,15 @@ and the other with x(0) = 1.000001 and v(0) = 0. Plot x(t) for each
 of these cases, and explain to the TA how these plots illustrate the
 butterfly effect (described below).
 \end{enumerate}
-}
-\end{parcolumns}
-\begin{parcolumns}[colwidths={2=0.3\linewidth}]{2}
-\colchunk
-{
+
+
+
 	\section{Intermittency, 1/f Noise, and the Butterfly Effect}
+	\marginpar{
+\includegraphics[scale = 0.8]{ch12zdj2}
+\captionof{figure}[] {Intermittent random
+bouncing between the two wells.}
+}
 	The random switching back and forth between equilibrium positions observed in
 \hyperref[P12.3]{P12.3}(c) is called intermittency and is one of standard ways that regular systems
 become chaotic. As the motion becomes chaotic you should also see an increase
@@ -184,7 +183,7 @@ tiny differences in initial conditions (too small to even be measured) led to va
 different outcomes in his model. The effect gets its name from a talk that he gave
 in 1972 titled ''Predictability: Does the Flap of a Butterfly's Wings in Brazil set off a
 Tornado in Texas?'' .
-\subsection*{\small{P12.4}}\label{P12.4}
+\subsection*{P12.4}\label{P12.4}
 \begin{enumerate}[label=\alph*]
 \item  Make a phase space plot for the system in \hyperref[P12.3]{P12.3}c) with A = 0.96. You
 should find that the chaotic behavior quiets down and is replaced by
@@ -232,33 +231,20 @@ grounds. Our picture has tight loops on the left and big loops on the
 right, but the potential is left$-$right symmetric; there should be another
 state with tight loops on the right and big ones on the right as well.
 \end{enumerate}
-}
-\colchunk{
-\begin{wrapfigure}{r}{4cm}
-\captionsetup{singlelinecheck=off, justification=raggedright, format=hang}
-\caption{Intermittent random
-bouncing between the two wells.}
-\label{Figure 12.2}
-\includegraphics[scale=0.8]{ch12zdj2}
-\end{wrapfigure}
-\begin{wrapfigure}{r}{4cm}
-\caption{Full time history, then
+\marginpar{
+\includegraphics[width=\marginparwidth]{ch12123}
+\captionof{figure}[] {Full time history, then
 final 4$-$cycle state from the small
 window. There are fewer loops in
 the lower trace because it is the
 final state; the extra loops in the
 box in the upper trace are from
-early times.}
-\label{Figure 12.3}
-\includegraphics[scale=0.6]{ch12123}
-\end{wrapfigure} 
+early times.}\label {Figure 12.3}
 }
-\end{parcolumns}
-\begin{parcolumns}[colwidths={2=0.3\linewidth}]{2}
-\colchunk
-{
+
+
 \section{Fractals}
-\subsection*{\small{P12.5}}\label{P12.5}
+\subsection*{P12.5}\label{P12.5}
 \begin{enumerate}[label=\alph*]
 \item The Fibonacci sequence $F_n$ is defined by
 \begin{equation}\label{12.6}
@@ -286,18 +272,12 @@ function again using 50,001 points between x = 3.1 and x = 3.2, and
 zoom in again. This kind of curve is called a fractal, or fractal curve\textsuperscript{2}
 and such curves are important in chaos theory.
 \end{enumerate}
-}
-\colchunk
-{
-\raggedright
-\begin{wrapfigure}{r}{4cm}
-\caption{The function plotted
-in \hyperref[P12.5]{P12.5}}
-\label {Figure 12.4}
-\includegraphics[scale=0.8]{ch12ks}
-\end{wrapfigure} 
+\marginpar{
+\includegraphics[width=\marginparwidth]{ch12ks}
+\captionof{figure}[] {The function plotted
+in \hyperref[P12.5]{P12.5}}\label {Figure 12.4}
 }
 \footnotetext{\textsuperscript{2}S. N. Rasband, Chaotic Dynamics of Nonlinear Systems (John Wiley and Sons, New York, 1990),
 Chap. 4, and http://sprott.physics.wisc.edu/fractals.htm}
-\end{parcolumns}
+
 \end{document}

@@ -1,8 +1,7 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 \chapter{Pumping a Swing}
-\begin{parcolumns}[colwidths={2=0.25\linewidth}]{2}
-\colchunk{
+
 	A playground swing is basically a driven and damped pendulum. But there
 are two ways to pump a swing: angular momentum pumping and parametric
 oscillation. In this lab we'll study and numerically model both methods.
@@ -35,7 +34,7 @@ oscillation. In this lab we'll study and numerically model both methods.
 		L=\dfrac{1}{2}I_1\dot{\theta}^{2}+\dfrac{1}{2}I_2(\dot{\theta}+\dot{\phi})^{2}+Mq\ell _1 cos\theta
 	\end{equation}
 	$$ where ~M=m_1 +m_2+m_3,~~I_1=M{\ell _1}^{2},and ~I_2=m_2{\ell _2}^{2}+m_3{\ell _3}^{2}$$
-	\subsection*{\small{P10.1}}\label{P10.1}
+	\subsection*{P10.1}\label{P10.1}
 		 On paper, use the Lagrangian equation of motion for $\theta$, i.e.
 		 $$
 		 	\dfrac{\partial L}{\partial \theta}-\dfrac{d}{dt}(\dfrac{\partial L}{\partial \dot{\theta}})=0
@@ -46,23 +45,16 @@ oscillation. In this lab we'll study and numerically model both methods.
 		\phi(t)=A+Acos(w_\phi t)
 		\end{equation}
 		and show that the equation of motion becomes
-}
-\colchunk{
-\begin{wrapfigure}{r}{8cm}
-	\captionsetup{singlelinecheck=off, margin={0cm, 4cm}, justification=raggedright, format=hang}
-	\caption{A simple model of a
+
+\marginpar{
+\includegraphics[width=\marginparwidth]{ch1010}
+\captionof{figure}[] {A simple model of a
 swing being pumped from the
-seated position.}
-	\label {Figure 10.1}
-	\includegraphics[scale=0.8]{ch1010}
-\end{wrapfigure} 
+seated position.}\label {Figure 10.1}
 }
-\end{parcolumns}
 \footnotetext{\textsuperscript{1}This model is taken from W. B. Case and M. A. Swanson, “The pumping of a swing from the
 seated position”, American Journal of Physics 58, 463-467 (1990).}
-\newpage 
-\begin{flushright}
-\begin{minipage}[t]{10cm}
+
 		\begin{equation}\label{10.3}
 			\ddot{\theta}+{\omega _0}^{2}sin\theta = \alpha cos(\omega _\phi t)
 		\end{equation}
@@ -72,7 +64,7 @@ seated position”, American Journal of Physics 58, 463-467 (1990).}
 		\end{equation}				
 		Compare with \hyperref[7.10]{Eq. (7.10)} and confirm that this is the equation for a driven
 	pendulum.
-	\subsection*{\small{P10.2}}\label{P10.2}
+	\subsection*{P10.2}\label{P10.2}
 	 Add some friction to \hyperref[10.3]{Eq. 10.3} by appending a linear damping term $−\gamma \dot{\theta}$ on
 	the right$-$hand side, and then solve the modified equation numerically using Matlab. Use the following ballpark numbers for a child on a playground
 	swing: $\ell _1 = 2 m, m_1 = m_2 = m_3 = 10 kg, \ell _2 = \ell _3 = 0.5 m, and A = 0.5 rad$
@@ -81,9 +73,9 @@ seated position”, American Journal of Physics 58, 463-467 (1990).}
 	Plot the solution from $t = 0 ~to ~t = 800$ s and note that it comes to a steady
 	state amplitude as driving and damping balance. Then use the following
 	code to animate the pumping process.
-	\begin{center}
+	
 	\textbf{Listing 10.1} (pumpanimate.m)
-	\end{center}
+	
 \begin{lstlisting}[language=Matlab][numbers=none]
 	% Put the code solving the equation above. The code below assumes
 	% that you have evenly spaced time steps with the following variables
@@ -102,11 +94,7 @@ seated position”, American Journal of Physics 58, 463-467 (1990).}
 	% position of head/legs with respect to swing
 	phi=A + A*cos(wp*te(istep));
 \end{lstlisting}
-\end{minipage}
-\end{flushright}
-\newpage
-\begin{flushleft}
-\begin{minipage}[t]{12cm}
+
 \begin{lstlisting}[language=Matlab][numbers=none]
 	xpers=l2*sin(phi + theta);
 	ypers=l2*cos(phi + theta);
@@ -148,18 +136,16 @@ seated position”, American Journal of Physics 58, 463-467 (1990).}
 	wiggle your center of mass you are wiggling the natural frequency. \hyperref[10.5]{Equation 10.5}
 	is simpler than the real equation for a pendulum. We will do the pendulum correctly later in this lab, but for small oscillation angles of the swing \hyperref[10.5]{Eq. 10.5}) gives
 	a reasonable approximation to the the motion of a swing.
-\end{minipage}
+
 \footnotetext{\textsuperscript{2}There are some nice videos of pumping a swing this way at http://retro.grinnell.edu/academic/
 physics/faculty/case/swing.
 }
 \footnotetext{\textsuperscript{3}L. D. Landau and E. M. Lifshitz Mechanics (Pergamon Press, New York, 1976), p. 80-83, and M.
 Abramowitz and I. A. Stegun Handbook of Mathematical Functions (Dover, New York, 1971), Chap.
 20.}
-\end{flushleft}
-\newpage
-\begin{parcolumns}[colwidths={2=0.25\linewidth}]{2}
-\colchunk{
-\subsection*{\small{P10.3}}\label{P10.3}
+
+
+\subsection*{P10.3}\label{P10.3}
 \begin{enumerate}[label=\alph*]
 	\item Use Matlab to solve \hyperref[10.5]{Eq. 10.5} with initial conditions $x(0) = 0$ and
 	$v(0) = 1$, and parameters $\omega _0 = 1, \gamma = 0, \epsilon = 0.1, and \omega _p = 1.1$. Plot the
@@ -228,7 +214,7 @@ good, but we still haven't found the correct solution.
 x^{3}=1+0.1e^{x_1}~~\implies ~~x^{3}=1+0.1exp[(1+0.1e^{1})^{1/3}]~~\implies 
 \end{equation}
 $$x_2=(1+0.1exp[(1+0.1e^{1})^{1/3}])^{1/3}$$
-\subsection*{\small{P10.4}}\label{P10.4}
+\subsection*{P10.4}\label{P10.4}
  This procedure starts to look ugly analytically, but if we just want a numerical answer there is no point in writing all of this out. Solve \hyperref[10.6]{Eq. 10.6} by
 continuing this step by step approach all the way to 15 significant figures in
 the Matlab command window by typing
@@ -248,7 +234,7 @@ $$
 	x^{3}=1+0.1e^{x}
 $$
 This is a very powerful trick and we will now use it to understand the parametric instability at $\omega _p = 2\omega _0$.
-\subsection*{\small{P10.5}}\label{P10.5}
+\subsection*{P10.5}\label{P10.5}
 Using $x(0) = 0,~ v(0) = 1, ~\omega _0 = 1,~ \omega _p = 1.3,~ \gamma = 0, ~and ~\epsilon = 0.3$, run your model
 from $t = 0~to t~ = 500$ with 214 equally spaced time steps. Take the Fourier
 transform and display its power spectrum using a semilogy plot. Our
@@ -274,7 +260,7 @@ again, but with $x _0$ in place of x in the small term ${\omega _0}^{2}\epsilon 
 \end{equation}
 With $x_0 = Acos (\omega _0 t)$ this is just a complicated version of the driven harmonic
 oscillator.
-\subsection*{\small{P10.6}}\label{P10.6}
+\subsection*{P10.6}\label{P10.6}
 Use Mathematica to solve this equation with $\gamma = 0$. You may need to recall
 that inhomogeneous linear differential equations like this have solutions
 of the form $x = x_h + x_p$, where $x_h$ is the homogeneous solution (without
@@ -285,20 +271,12 @@ solution is just our friend $x_0 = Acos (w_0 t)$ and that the particular solutio
 (the messy part) can be written as a sum of terms that involve sines and cosines at new frequencies. It's as if the driving force had a split personality
 involving more than one driving frequency. This is exactly right, as you can
 see by using the identity
+
+	
+\marginpar{
+\includegraphics[width=\marginparwidth]{ch9zd11}
+\captionof{figure}[] {Pumped swing instability.}
 }
-\colchunk{
-	\begin{wrapfigure}{r}{7cm}
-	\captionsetup{singlelinecheck=off, margin={3cm, 0cm}, justification=raggedright, format=hang}
-	\caption{A simple model of a
-swing being pumped from the
-seated position.}
-	\label {Figure 10.2}
-	\includegraphics[scale=0.8]{ch9zd11}
-\end{wrapfigure}
-}
-\end{parcolumns}
-\begin{flushleft}
-\begin{minipage}[t]{12cm}
 $$
 	cos\alpha cos\beta = \dfrac{1}{2}(cos(\alpha +\beta) + cos(\alpha + \beta))
 $$
@@ -333,7 +311,7 @@ $3\omega -0$. Three out of four come back to $\omega _0$ in second order, so the
 instability due to this nonlinear resonance. But because it takes two perturbation
 steps to get to this resonance, and since each step involves another power of $\epsilon$,
 this choice for $\omega _p$ is less unstable.
-\subsection*{\small{P10.7}}\label{P10.7}
+\subsection*{P10.7}\label{P10.7}
  Explain all of the frequency peaks in your spectrum from \hyperref[P10.5]{P10.5} using the
 concepts explained above. Explain what the amplitudes of the various
 peaks mean and how the $\omega _p = 2\omega _0$ instability arises.
@@ -351,11 +329,8 @@ $\Delta L$ about the constant length $L_0$, then
 \begin{equation}\label{10.14}
 \ell (t)=L _0 +\Delta L cos \omega _p t
 \end{equation}
-\end{minipage}
-\end{flushleft}
-\begin{flushright}
-\begin{minipage}[t]{12cm}
-\subsection*{\small{P10.8}}\label{P10.8}
+
+\subsection*{P10.8}\label{P10.8}
 Use Matlab to solve \hyperref[10.13]{Eq. 10.13} with (\hyperref[10.14]{10.14}) using the following realistic
 parameter values. A typical backyard swing has a length of about $L_0 = 2 m$.
 As you do deep knee bends you move most of your mass up and down, so
@@ -366,6 +341,5 @@ numerical solution gradually increase $\Delta L$ from zero up to around 0.3 m wi
 $\omega _p = 2\omega _0$ and find the threshhold value of $\Delta L$ at which the swing becomes
 unstable. (Explain to your TA why the pendulum amplitude doesn't just
 keep getting bigger forever.)
-\end{minipage}
-\end{flushright}
+
 \end{document}
