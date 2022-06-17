@@ -21,17 +21,20 @@
 \usepackage{amsmath,amsthm,amssymb} 	% pakiet matematyczny
 \usepackage{color} 						% podstawowe kolory
 \usepackage{listings}  
-
 \usepackage[a4paper,left=2cm,right=6cm,top=2cm,bottom=1cm,includefoot=false,includehead=false,footskip=1.16cm]{geometry} 	% wymiary strony
 
 \usepackage{bm}							% dla pogrubionych i pochylonych czcionek w środowisku matematycznym
-
-			
-\definecolor{backgroundforlst}{rgb}{0.878,0.957,1.0}
-\lstdefinestyle{lstownstyle}{
-   % backgroundcolor=\color{backgroundforlst},
-    basicstyle=\linespread{1.2}\ttfamily\footnotesize, 
-    \linespread{x.x} - interlinia
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\lstdefinestyle{lstownstyle}{   
+    commentstyle=\color{codegreen},
+    identifierstyle=\color{blue},
+    stringstyle =\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    keywordstyle=\color{codepurple},
+    basicstyle=\linespread{1.2}\ttfamily\footnotesize ,
+    %\linespread{x.x} - interlinia,
     breakatwhitespace=false,
     breaklines=true,
     captionpos=b,
@@ -49,7 +52,7 @@
 
 %\lstset{style=lstownstyle}
 
-
+\lstset{style=lstownstyle}
 
 % rozmiar czcionki numeru strony
 \renewcommand*{\thepage}{\footnotesize\arabic{page}}
